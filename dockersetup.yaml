@@ -25,7 +25,7 @@
     service: name=docker state=restarted
 
   - name: Checking Installed Docker Version
-    docker_host_info: 
+    command: "docker --version"
     register: dockerinfo
 
   - name: Debug the output
