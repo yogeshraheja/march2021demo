@@ -23,3 +23,10 @@
 
   - name: Restarting Docker Daemon
     service: name=docker state=restarted
+
+  - name: Checking Installed Docker Version
+    docker_host_info: 
+    register: dockerinfo
+
+  - name: Debug the output
+    debug: var=dockerinfo
